@@ -42,16 +42,4 @@ export default {
     // Options
   },
   target: 'static',
-  generate: {
-    routes: function() {
-      const fs = require('fs');
-      const path = require('path');
-      return fs.readdirSync('./content/blog').map(file => {
-        return {
-          route: `/blog/${path.parse(file).name}`, // Return the slug
-          payload: require(`./content/blog/${file}`),
-        };
-      });
-    },
-  },
 }
