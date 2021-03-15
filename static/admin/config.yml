@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   branch: master
 
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 
@@ -23,6 +24,8 @@ collections:
     label: 'Viet'
     folder: 'content/viet'
     format: 'frontmatter'
+    preview_path: viet/{{year}}/{{month}}/{{title}}
+    preview_path_date_field: published_at
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
